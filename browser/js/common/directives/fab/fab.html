@@ -7,69 +7,67 @@
     </md-tooltip>
 </md-button>
 
-<div class='resource-dialog'>
-  <div class="md-dialog-container" id="resourceDialog">
-    <md-dialog id="fab-box">
-      <md-dialog-content layout="column" layout-margin layout-align="space-around">
-        <h3 class='add-resource-title'>Add a Resource</h3>
-        <form name="resourceForm">
-          <div layout="row">
-            <md-input-container flex>
-              <label>URL</label>
-              <input type="text" ng-model="resource.link" placeholder="http://..." required>
-            </md-input-container>
+<div class="md-dialog-container" id="resourceDialog">
+  <md-dialog id="fab-box">
+    <md-dialog-content layout="column" layout-margin layout-align="space-around">
+      <h3 class='add-resource-title'>Add a Resource</h3>
+      <form name="resourceForm">
+        <div layout="row">
+          <md-input-container flex>
+            <label>URL</label>
+            <input type="text" ng-model="resource.link" placeholder="http://..." required>
+          </md-input-container>
 
-            <md-input-container flex="30">
-              <label>Type</label>
-              <md-select ng-model="resource.type">
-                <md-option ng-value="type" ng-repeat="type in types">{{ type }}</md-option>
-              </md-select>
-            </md-input-container>
+          <md-input-container flex="30">
+            <label>Type</label>
+            <md-select ng-model="resource.type">
+              <md-option ng-value="type" ng-repeat="type in types">{{ type }}</md-option>
+            </md-select>
+          </md-input-container>
 
-          </div>
-          <div layout="row">
+        </div>
+        <div layout="row">
 
-            <md-input-container flex>
-              <label>Source</label>
-              <input type="text" ng-model="resource.source" placeholder="ex. Scotch.io">
-            </md-input-container>
+          <md-input-container flex>
+            <label>Source</label>
+            <input type="text" ng-model="resource.source" placeholder="ex. Scotch.io">
+          </md-input-container>
 
-            <md-input-container flex>
-              <label>Author</label>
-              <input type="text" ng-model="resource.author" placeholder="ex. Harry S. Truman">
-            </md-input-container>
+          <md-input-container flex>
+            <label>Author</label>
+            <input type="text" ng-model="resource.author" placeholder="ex. Harry S. Truman">
+          </md-input-container>
 
-          </div>
+        </div>
 
-          <div layout="row">
-            <md-input-container flex>
-              <label>Title</label>
-              <input type="text" ng-model="resource.title" placeholder="ex. My Fave Framework" required>
-            </md-input-container>
-            <md-input-container flex="40" ng-if="loggedIn">
-              <label>Add to Guide</label>
-              <md-select ng-model="resource.guide">
-                <md-option ng-value="guide.id" ng-repeat="guide in guides">{{ guide.title }}</md-option>
-              </md-select>
-            </md-input-container>
-          </div>
+        <div layout="row">
+          <md-input-container flex>
+            <label>Title</label>
+            <input type="text" ng-model="resource.title" placeholder="ex. My Fave Framework" required>
+          </md-input-container>
+          <md-input-container flex="40" ng-if="loggedIn">
+            <label>Add to Guide</label>
+            <md-select ng-model="resource.guide">
+              <md-option ng-value="guide.id" ng-repeat="guide in guides">{{ guide.title }}</md-option>
+            </md-select>
+          </md-input-container>
+        </div>
 
-          <div layout="row">
-            <md-input-container flex>
-              <label>Tags</label>
-              <tag-chips selected-tags="resource.tags" match="false">
-              </tag-chips>
-              <p class="warning" ng-if="!resource.tags.length && resourceForm.tags.$invalid">Please apply at least one tag.</p>
-            </md-input-container>
-          </div>
+        <div layout="row">
+          <md-input-container flex>
+            <label>Tags</label>
+            <tag-chips selected-tags="resource.tags" match="false">
+            </tag-chips>
+            <p class="warning" ng-if="!resource.tags.length && resourceForm.tags.$invalid">Please apply at least one tag.</p>
+          </md-input-container>
+        </div>
 
-          <div layout="row">
-            <md-button flex type="submit" ng-click="submitForm()">submit</md-button>
-            <md-button flex ng-click="clearForm()">clear</md-button>
-          </div>
+        <div layout="row">
+          <md-button flex type="submit" ng-click="submitForm()">submit</md-button>
+          <md-button flex ng-click="clearForm()">clear</md-button>
+        </div>
 
-        </form>
-      </md-dialog-content>
-    </md-dialog>
-  </div>
+      </form>
+    </md-dialog-content>
+  </md-dialog>
 </div>
